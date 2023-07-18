@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { InputWithLabel } from "../components/InputWithLabel";
 
-export const UserForm = () => {
+export const UserForm = ({ onAddUser }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
   const submitHandler = (evt) => {
     evt.preventDefault();
 
-    console.log({ name, email });
+    onAddUser({ name, email });
   };
 
   return (
